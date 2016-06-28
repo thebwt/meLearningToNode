@@ -23,6 +23,9 @@ app.post('/api/posts', function (req,res,next) {
 	})
 })
 
+app.get('/', function (req, res) {
+	res.sendfile('layouts/posts.html')
+})
 app.listen(8888,function() {
 	console.log('Server Listening on', 8888)
 })
