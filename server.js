@@ -5,9 +5,6 @@ var app = express();
 
 app.use(bodyParser.json());
 
-getFunc = 
-
-
 app.get('/api/posts', function(req,res) {
 	res.json([{
 			username: 'dickeryxxx',
