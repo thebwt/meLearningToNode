@@ -16,7 +16,7 @@ router.post('/', function (req,res,next) {
 	})
 	post.save(function (err, post) {
 		if (err) {return next(err) }
-		res.json(201,post)
+		res.status(201).json(post)
 	})
 })
 
