@@ -5,5 +5,5 @@ var user = db.Schema({
 	password: {type: String , select: false}
 })
 
-module.exports = mongoose.model('User', user)
+module.exports = db.model('User', user)
 

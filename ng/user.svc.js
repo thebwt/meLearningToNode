@@ -3,7 +3,7 @@ angular.module('app')
 	var svc = this
 	svc.getUser = function () {
 		return $http.get('/api/users', {
-			headers: {'X-Auth': this.token}
+			headers: {'x-auth': this.token.replace(/['"]+/g, '')}
 		})
 	}
 	svc.login = function (username, password) {
