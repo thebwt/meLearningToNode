@@ -6,5 +6,10 @@ angular.module('app')
 				$scope.$emit('login', response.data)
 			})
 	}
+	$scope.logout = function () {
+		UserSvc.logout()
+		$scope.$emit('logout')
+		
+	}
 })
 
