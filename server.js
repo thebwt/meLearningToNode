@@ -2,6 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
+
+var aws = require('./websockets')
+
 app.use(bodyParser.json());
 app.use(require('./auth'))
 
@@ -10,6 +13,7 @@ app.use('/api/sessions', require('./controllers/api/sessions'))
 app.use('/api/users', require('./controllers/api/users'))
 app.use('/', require('./controllers/static'))
 
-app.listen(8888,function() {
+var server = app.listen(8888,function() {
 	console.log('Server Listening on', 8888)
 })
+aws.connect(server)
