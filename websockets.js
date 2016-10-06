@@ -5,7 +5,7 @@ var clients = []
 exports.connect=function (server) {
 	var wss = ws.Server({server: server})
 	wss.on('connection', function (ws) {
-		ws.send('hello!')
+		//ws.send('hello!')
 		clients.push(ws)
 
 		ws.on('close', function () {
